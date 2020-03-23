@@ -1,0 +1,20 @@
+{
+  "name": "testing-react-applications",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeoDoo/testing-react-applications.git"
+  },
+  "keywords": [],
+  "author": "George Karametas <geometas@hotmail.com> (https://geodoo.work/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GeoDoo/testing-react-applications/issues"
+  },
+  "homepage": "https://github.com/GeoDoo/testing-react-applications#readme"
+}
