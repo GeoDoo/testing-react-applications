@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/GeoDoo/testing-react-applications/issues"
   },
-  "homepage": "https://github.com/GeoDoo/testing-react-applications#readme"
+  "homepage": "https://github.com/GeoDoo/testing-react-applications#readme",
+  "devDependencies": {
+    "webpack": "4.42.0",
+    "webpack-cli": "3.3.11"
+  }
 }
