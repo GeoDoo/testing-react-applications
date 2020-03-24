@@ -1,1 +1,5 @@
-console.log("hi");
+const hi = {
+  message: ["hey", "you", "there!"]
+};
+
+console.log(...hi.message);
