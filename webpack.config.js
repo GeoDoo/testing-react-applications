@@ -11,6 +11,5 @@ module.exports = {
     contentBase: "./dist",
     hot: true,
     host: "localhost"
-  },
-  mode: "development"
+  }
 };
