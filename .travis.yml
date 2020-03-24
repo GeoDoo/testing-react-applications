@@ -1,0 +1,11 @@
+dist: trusty
+addons:
+  chrome: stable
+cache:
+  npm: true
+  directories:
+    - node_modules
+install:
+  - npm install
+script:
+  - npm run build
