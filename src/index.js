@@ -1,5 +1,5 @@
 const hi = {
-  message: ["hey", "you", "there!"]
-};
+  message: ['hey', 'you', 'there!'],
+}
 
-console.log(...hi.message);
+console.log(...hi.message)
