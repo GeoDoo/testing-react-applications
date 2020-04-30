@@ -5,10 +5,10 @@ const App = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
-  const onSubmit = event => {
+  const onSubmit = async event => {
     event.preventDefault()
 
-    login(username, password)
+    await login(username, password)
   }
 
   const onChange = event => {
