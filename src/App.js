@@ -8,7 +8,7 @@ const App = () => {
   const onSubmit = event => {
     event.preventDefault()
 
-    login()
+    login(username, password)
   }
 
   const onChange = event => {
