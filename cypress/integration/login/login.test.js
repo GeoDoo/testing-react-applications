@@ -8,16 +8,13 @@ Given(
   'I see a login form with a username and password fields and a login button',
   () => {
     cy.get('form').findAllByLabelText('Username').should('exist')
-
     cy.get('form').findAllByLabelText('Password').should('exist')
-
     cy.get('form').findAllByText('Submit').should('exist')
   },
 )
 
 When('I type in my username and password', () => {
   cy.get('form').findAllByLabelText('Username').type(Cypress.env('username'))
-
   cy.get('form').findAllByLabelText('Password').type(Cypress.env('password'))
 })
 
