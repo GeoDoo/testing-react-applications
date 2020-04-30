@@ -17,6 +17,9 @@
   },
   "plugins": ["react"],
   "rules": {
-    "semi": "off"
+    "semi": "off",
+    "object-curly-spacing": "off",
+    "new-cap": "off",
+    "arrow-parens": "off"
   }
 }
