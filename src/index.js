@@ -1,5 +1,5 @@
-const hi = {
-  message: ['hey', 'you', 'there!'],
-}
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
 
-console.log(...hi.message)
+ReactDOM.render(<App />, document.getElementById('root'))
