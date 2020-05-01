@@ -1,8 +1,4 @@
-import { Given, Then } from 'cypress-cucumber-preprocessor/steps'
-
-Given('I go to {string}', url => {
-  cy.visit(url)
-})
+import { Then } from 'cypress-cucumber-preprocessor/steps'
 
 Then('I see a login and a register link in the header', () => {
   cy.get('header')
