@@ -16,7 +16,7 @@ cache:
 install:
   - npm ci
 before_script:
-  - npm start
+  - npm start &
 script:
   - npm run test:e2e
   - npm run build
