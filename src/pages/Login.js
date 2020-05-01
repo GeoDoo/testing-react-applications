@@ -1,14 +1,22 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { login } from '../api'
 
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const history = useHistory()
 
   const onSubmit = async event => {
     event.preventDefault()
 
-    await login(username, password)
+    try {
+      await login(username, password)
+    } catch (error) {
+      throw error
+    }
+
+    history.replace('/dashboard')
   }
 
   const onChange = event => {

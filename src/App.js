@@ -8,6 +8,7 @@ const App = () => (
       <Route path="/login">
         <Login />
       </Route>
+      <Route path="/dashboard">You have successfully logged in</Route>
     </Switch>
   </BrowserRouter>
 )
