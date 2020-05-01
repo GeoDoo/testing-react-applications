@@ -17,32 +17,32 @@ Given('I see a link to create an account', () => {
 Given(
   'I see a login form with a username and password fields and a login button',
   () => {
-    cy.get('form').findAllByLabelText('Username').should('exist')
-    cy.get('form').findAllByLabelText('Password').should('exist')
-    cy.get('form').findAllByText('Submit').should('exist')
+    cy.get('form').findByLabelText('Username').should('exist')
+    cy.get('form').findByLabelText('Password').should('exist')
+    cy.get('form').findByText('Submit').should('exist')
   },
 )
 
 When('I type in my username and password', () => {
-  cy.get('form').findAllByLabelText('Username').type(Cypress.env('username'))
-  cy.get('form').findAllByLabelText('Password').type(Cypress.env('password'))
+  cy.get('form').findByLabelText('Username').type(Cypress.env('username'))
+  cy.get('form').findByLabelText('Password').type(Cypress.env('password'))
 })
 
 When('I type the wrong username and password', () => {
-  cy.get('form').findAllByLabelText('Username').type('yo@yo.com')
-  cy.get('form').findAllByLabelText('Password').type('hohoho')
+  cy.get('form').findByLabelText('Username').type('yo@yo.com')
+  cy.get('form').findByLabelText('Password').type('hohoho')
 })
 
 When('I type in my username', () => {
-  cy.get('form').findAllByLabelText('Username').type(Cypress.env('username'))
+  cy.get('form').findByLabelText('Username').type(Cypress.env('username'))
 })
 
 When('I type an invalid email', () => {
-  cy.get('form').findAllByLabelText('Username').type('hjdajdhkajdhasd')
+  cy.get('form').findByLabelText('Username').type('hjdajdhkajdhasd')
 })
 
 When('I submit the form', () => {
-  cy.get('form').findAllByText('Submit').click()
+  cy.get('form').findByText('Submit').click()
 })
 
 Then('I successfully login', () => {

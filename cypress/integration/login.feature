@@ -15,12 +15,12 @@ Feature: Login page
     And I should go to "/dashboard"
 
   Scenario: I cannot login without email
-    When I submit the form 
+    When I submit the form
     Then I see the message "Email cannot be blank!"
 
   Scenario: I cannot login without a valid email
     When I type an invalid email
-    And I submit the form 
+    And I submit the form
     Then I see the message "Email should be a valid email!"
 
   Scenario: I cannot login without password
