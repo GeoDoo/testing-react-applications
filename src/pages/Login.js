@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Link, useHistory } from 'react-router-dom'
 import { login } from '../api'
 
-const Login = () => {
+const Login = ({ setToken }) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [validationErrorMessage, setValidationErrorMessage] = useState('')
@@ -12,11 +13,14 @@ const Login = () => {
     event.preventDefault()
 
     try {
-      await login(username, password)
-      history.replace('/dashboard')
+      const token = await login(username, password)
+      window.localStorage.setItem('auth', token)
+      setToken(token)
     } catch (error) {
-      setValidationErrorMessage(error.message)
+      return setValidationErrorMessage(error.message)
     }
+
+    history.replace('/dashboard')
   }
 
   const onChange = event => {
@@ -67,6 +71,10 @@ const Login = () => {
       </form>
     </>
   )
+}
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired,
 }
 
 export default Login
