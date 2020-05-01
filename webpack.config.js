@@ -1,7 +1,12 @@
+const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+  },
   module: {
     rules: [
       {
@@ -31,14 +36,15 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/index.html',
+      template: path.join(__dirname, 'src/index.html'),
       filename: './index.html',
     }),
   ],
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './index.html',
-    hot: true,
+    contentBase: path.join(__dirname, 'src'),
     host: 'localhost',
+    hot: true,
+    historyApiFallback: true,
   },
 }
