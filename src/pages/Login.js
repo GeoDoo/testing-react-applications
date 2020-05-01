@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { login } from '../api'
 
 const Login = () => {
@@ -30,33 +30,39 @@ const Login = () => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          aria-labelledby="username"
-          value={username}
-          onChange={onChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          aria-labelledby="password"
-          value={password}
-          onChange={onChange}
-        />
-      </div>
-      <div>
-        <input type="submit" value="Submit" />
-      </div>
-    </form>
+    <>
+      <h1>Sign In</h1>
+      <p>
+        <Link to="/register">Need to create an account?</Link>
+      </p>
+      <form onSubmit={onSubmit}>
+        <div>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            aria-labelledby="username"
+            value={username}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            aria-labelledby="password"
+            value={password}
+            onChange={onChange}
+          />
+        </div>
+        <div>
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+    </>
   )
 }
 
