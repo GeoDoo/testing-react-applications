@@ -5,6 +5,7 @@ import { login } from '../api'
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [validationErrorMessage, setValidationErrorMessage] = useState('')
   const history = useHistory()
 
   const onSubmit = async event => {
@@ -12,11 +13,10 @@ const Login = () => {
 
     try {
       await login(username, password)
+      history.replace('/dashboard')
     } catch (error) {
-      throw error
+      setValidationErrorMessage(error.message)
     }
-
-    history.replace('/dashboard')
   }
 
   const onChange = event => {
@@ -36,6 +36,9 @@ const Login = () => {
         <Link to="/register">Need to create an account?</Link>
       </p>
       <form onSubmit={onSubmit}>
+        {validationErrorMessage && (
+          <p style={{ color: '#cc0000' }}>{validationErrorMessage}</p>
+        )}
         <div>
           <label htmlFor="username">Username</label>
           <input

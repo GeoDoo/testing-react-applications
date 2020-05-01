@@ -28,14 +28,31 @@ When('I type in my username and password', () => {
   cy.get('form').findAllByLabelText('Password').type(Cypress.env('password'))
 })
 
+When('I type the wrong username and password', () => {
+  cy.get('form').findAllByLabelText('Username').type('yo@yo.com')
+  cy.get('form').findAllByLabelText('Password').type('hohoho')
+})
+
+When('I type in my username', () => {
+  cy.get('form').findAllByLabelText('Username').type(Cypress.env('username'))
+})
+
+When('I type an invalid email', () => {
+  cy.get('form').findAllByLabelText('Username').type('hjdajdhkajdhasd')
+})
+
 When('I submit the form', () => {
   cy.get('form').findAllByText('Submit').click()
 })
 
-Then('I successfully login', url => {
+Then('I successfully login', () => {
   cy.findByText('You have successfully logged in')
 })
 
 Then('I should go to {string}', url => {
   cy.location('pathname').should('eq', url)
+})
+
+Then('I see the message {string}', message => {
+  cy.findByText(message).should('exist')
 })
