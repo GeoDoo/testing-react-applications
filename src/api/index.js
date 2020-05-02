@@ -15,3 +15,11 @@ export const login = async (username, password) => {
     throw error
   }
 }
+
+export const logout = async () => {
+  try {
+    window.localStorage.clear()
+  } catch (error) {
+    throw error
+  }
+}

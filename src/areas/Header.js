@@ -1,10 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
+import { logout } from '../api'
 
 const Header = ({ type }) => {
   const isAuthenticated = !!window.localStorage.getItem('auth')
   const shouldShowUserMenu = type !== 'login'
+  const onLogout = async event => {
+    event.stopPropagation()
+
+    await logout()
+  }
 
   return (
     <header className="center-align">
@@ -14,7 +20,9 @@ const Header = ({ type }) => {
             {isAuthenticated && (
               <>
                 <li>
-                  <Link to="/">Logout</Link>
+                  <Link to="/" onClick={onLogout}>
+                    Logout
+                  </Link>
                 </li>
               </>
             )}

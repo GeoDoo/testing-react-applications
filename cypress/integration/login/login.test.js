@@ -50,10 +50,6 @@ Then('I successfully login', () => {
   cy.findByText('You have successfully logged in')
 })
 
-Then('I should go to {string}', url => {
-  cy.location('pathname').should('eq', url)
-})
-
 Then('I see the message {string}', message => {
   cy.findByText(message).should('exist')
 })
