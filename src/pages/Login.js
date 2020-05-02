@@ -34,39 +34,49 @@ const Login = () => {
 
   return (
     <ThreePartsLayout>
-      <h1>Sign In</h1>
-      <p>
-        <Link to="/register">Need to create an account?</Link>
-      </p>
-      <form onSubmit={onSubmit}>
-        {validationErrorMessage && (
-          <p style={{ color: '#cc0000' }}>{validationErrorMessage}</p>
-        )}
-        <div>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            aria-labelledby="username"
-            value={username}
-            onChange={onChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            aria-labelledby="password"
-            value={password}
-            onChange={onChange}
-          />
-        </div>
-        <div>
-          <input type="submit" value="Submit" />
-        </div>
+      <section className="text-center">
+        <h1>Sign In</h1>
+        <p>
+          <Link to="/register">Need to create an account?</Link>
+        </p>
+      </section>
+      <form className="form" onSubmit={onSubmit}>
+        <section className="form-group">
+          {validationErrorMessage && (
+            <p className="error">{validationErrorMessage}</p>
+          )}
+          <section className="form-group-item">
+            <label className="form-label" htmlFor="username">
+              Username
+            </label>
+            <input
+              className="form-input"
+              type="text"
+              id="username"
+              name="username"
+              aria-labelledby="username"
+              value={username}
+              onChange={onChange}
+            />
+          </section>
+          <section className="form-group-item">
+            <label className="form-label" htmlFor="password">
+              Password
+            </label>
+            <input
+              className="form-input"
+              type="password"
+              id="password"
+              name="password"
+              aria-labelledby="password"
+              value={password}
+              onChange={onChange}
+            />
+          </section>
+          <section className="form-group-item">
+            <input className="button" type="submit" value="Submit" />
+          </section>
+        </section>
       </form>
     </ThreePartsLayout>
   )
