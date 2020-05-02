@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => (
   <footer className="center-align">
-    Copyright &copy; {new Date().getFullYear()} Hey You Inc.
+    Copyright &copy; {new Date().getFullYear()} Awesome Inc.
   </footer>
 )
 
