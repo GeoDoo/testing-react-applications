@@ -4,6 +4,7 @@ Feature: Login page
 
   Background: I visit the login page
     Given I go to "/login"
+    And I do not see login and register links in the header
     And I see a greeting message "Sign In"
     And I see a link to create an account
     And I see a login form with a username and password fields and a login button

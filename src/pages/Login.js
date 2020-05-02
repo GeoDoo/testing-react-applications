@@ -33,7 +33,7 @@ const Login = () => {
   }
 
   return (
-    <ThreePartsLayout>
+    <ThreePartsLayout type="login">
       <section className="text-center">
         <h1>Sign In</h1>
         <p>

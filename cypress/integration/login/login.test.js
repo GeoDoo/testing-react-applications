@@ -1,5 +1,10 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'
 
+Given('I do not see login and register links in the header', () => {
+  cy.get('header').findByText('Login').should('not.exist')
+  cy.get('header').findByText('Register').should('not.exist')
+})
+
 Given('I see a greeting message {string}', message => {
   cy.findByText(message).should('exist')
 })

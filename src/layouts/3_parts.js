@@ -4,10 +4,10 @@ import Header from '../areas/Header'
 import Main from '../areas/Main'
 import Footer from '../areas/Footer'
 
-const ThreePartsLayout = ({ children }) => {
+const ThreePartsLayout = ({ type = 'public', children }) => {
   return (
     <>
-      <Header />
+      <Header type={type} />
       <Main>{children}</Main>
       <Footer />
     </>
@@ -15,6 +15,7 @@ const ThreePartsLayout = ({ children }) => {
 }
 
 ThreePartsLayout.propTypes = {
+  type: PropTypes.node,
   children: PropTypes.node.isRequired,
 }
 
