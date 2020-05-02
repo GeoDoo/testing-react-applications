@@ -5,7 +5,7 @@ export const login = () => {
 }
 
 export const logout = () => {
-  window.localStorage.clear
+  window.localStorage.clear()
 }
 
 Cypress.Commands.add('login', login)
