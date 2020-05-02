@@ -14,7 +14,7 @@ const Header = ({ type }) => {
             {isAuthenticated && (
               <>
                 <li>
-                  <Link to="/logout">Logout</Link>
+                  <Link to="/">Logout</Link>
                 </li>
               </>
             )}
