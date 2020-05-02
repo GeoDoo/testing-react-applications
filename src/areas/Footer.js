@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Footer = () => (
-  <footer className="center-align">Copyright &copy; 2020 Hey You Inc.</footer>
+  <footer className="center-align">
+    Copyright &copy; {new Date().getFullYear()} Hey You Inc.
+  </footer>
 )
 
 export default Footer
