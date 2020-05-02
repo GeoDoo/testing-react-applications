@@ -15,36 +15,29 @@ Feature: Login page
     Then I successfully login
     And I should go to "/dashboard"
 
-  Scenario: I cannot login without email
+  Scenario: I cannot login without the correct credentials
     When I submit the form
     Then I see the message "Email cannot be blank!"
     And I type in my username
     And the error message "Email cannot be blank!" is gone
     And I submit the form
     And I am logged out
+    And I see the message "Password cannot be blank!"
 
-  Scenario: I cannot login without a valid email
-    When I type an invalid email
+    And I type an invalid email
     And I submit the form
-    Then I see the message "Email should be a valid email!"
+    And I see the message "Email should be a valid email!"
     And I type in my username
     And the error message "Email should be a valid email!" is gone
     And I submit the form
     And I am logged out
+    And I see the message "Password cannot be blank!"
 
-
-  Scenario: I cannot login without password
-    When I type in my username
+    And I type the wrong username
     And I submit the form
-    Then I see the message "Password cannot be blank!"
-    And I type in my username and password
-    And the error message "Password cannot be blank!" is gone
-    And I submit the form
+    And I see the message "User credentials are wrong!"
     And I am logged out
-
-
-  Scenario: I cannot login without the correct credentials
-    When I type the wrong username and password
+    And I type the wrong password
     And I submit the form
-    Then I see the message "User credentials are wrong!"
+    And I see the message "User credentials are wrong!"
     And I am logged out

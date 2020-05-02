@@ -25,21 +25,41 @@ Given(
 )
 
 When('I type in my username and password', () => {
-  cy.get('form').findByLabelText('Username').type(Cypress.env('username'))
-  cy.get('form').findByLabelText('Password').type(Cypress.env('password'))
+  cy.get('form')
+    .findByLabelText('Username')
+    .clear()
+    .type(Cypress.env('username'))
+  cy.get('form')
+    .findByLabelText('Password')
+    .clear()
+    .type(Cypress.env('password'))
 })
 
-When('I type the wrong username and password', () => {
-  cy.get('form').findByLabelText('Username').type('yo@yo.com')
-  cy.get('form').findByLabelText('Password').type('hohoho')
+When('I type the wrong username', () => {
+  cy.get('form')
+    .findByLabelText('Username')
+    .clear()
+    .type('users@users.com')
+  cy.get('form').findByLabelText('Password').clear().type(Cypress.env('password'))
+})
+
+When('I type the wrong password', () => {
+  cy.get('form')
+    .findByLabelText('Username')
+    .clear()
+    .type(Cypress.env('username'))
+  cy.get('form').findByLabelText('Password').clear().type('hohoho')
 })
 
 When('I type in my username', () => {
-  cy.get('form').findByLabelText('Username').type(Cypress.env('username'))
+  cy.get('form')
+    .findByLabelText('Username')
+    .clear()
+    .type(Cypress.env('username'))
 })
 
 When('I type an invalid email', () => {
-  cy.get('form').findByLabelText('Username').type('hjdajdhkajdhasd')
+  cy.get('form').findByLabelText('Username').clear().type('hjdajdhkajdhasd')
 })
 
 When('I submit the form', () => {
