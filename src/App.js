@@ -1,24 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Login from './pages/Login'
-import Header from './blocks/Header'
+import Dashboard from './pages/Dashboard'
+import Home from './pages/Home'
 
-const App = () => {
-  // TODO: find better way
-  const [, setToken] = useState('')
-
-  return (
-    <BrowserRouter>
-      <Header />
-      <Switch>
-        <Route path="/login">
-          <Login setToken={setToken} />
-        </Route>
-        <Route path="/dashboard">You have successfully logged in</Route>
-        <Route exact path="/"></Route>
-      </Switch>
-    </BrowserRouter>
-  )
-}
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      <Route path="/login">
+        <Login />
+      </Route>
+      <Route path="/dashboard">
+        <Dashboard />
+      </Route>
+      <Route exact path="/">
+        <Home />
+      </Route>
+    </Switch>
+  </BrowserRouter>
+)
 
 export default App

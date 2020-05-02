@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 import { Link, useHistory } from 'react-router-dom'
+import ThreePartsLayout from '../layouts/3_parts'
 import { login } from '../api'
 
-const Login = ({ setToken }) => {
+const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [validationErrorMessage, setValidationErrorMessage] = useState('')
@@ -15,7 +15,6 @@ const Login = ({ setToken }) => {
     try {
       const token = await login(username, password)
       window.localStorage.setItem('auth', token)
-      setToken(token)
     } catch (error) {
       return setValidationErrorMessage(error.message)
     }
@@ -34,7 +33,7 @@ const Login = ({ setToken }) => {
   }
 
   return (
-    <>
+    <ThreePartsLayout>
       <h1>Sign In</h1>
       <p>
         <Link to="/register">Need to create an account?</Link>
@@ -69,12 +68,8 @@ const Login = ({ setToken }) => {
           <input type="submit" value="Submit" />
         </div>
       </form>
-    </>
+    </ThreePartsLayout>
   )
-}
-
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired,
 }
 
 export default Login
