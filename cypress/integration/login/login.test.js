@@ -36,11 +36,11 @@ When('I type in my username and password', () => {
 })
 
 When('I type the wrong username', () => {
+  cy.get('form').findByLabelText('Username').clear().type('users@users.com')
   cy.get('form')
-    .findByLabelText('Username')
+    .findByLabelText('Password')
     .clear()
-    .type('users@users.com')
-  cy.get('form').findByLabelText('Password').clear().type(Cypress.env('password'))
+    .type(Cypress.env('password'))
 })
 
 When('I type the wrong password', () => {
