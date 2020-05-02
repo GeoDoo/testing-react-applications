@@ -3,7 +3,9 @@ export const validateUserCredentials = (email, password) => {
     throw new Error('Email cannot be blank!')
   }
 
-  const isInvalidEmail = !email.includes('@') || !email.includes('.')
+  const isInvalidEmail =
+    !email.includes('@') || (email.match(/\./g) || []).length !== 1
+
   if (isInvalidEmail) {
     throw new Error('Email should be a valid email!')
   }
