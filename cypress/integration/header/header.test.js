@@ -4,7 +4,7 @@ Then('I see a login and a register link in the header', () => {
   cy.get('header')
     .findByText('Login')
     .should('have.attr', 'href')
-    .and('eq', '/login')
+    .and('eq', '/')
 
   cy.get('header')
     .findByText('Register')
