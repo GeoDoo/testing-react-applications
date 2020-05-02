@@ -54,6 +54,6 @@ Then('I see the message {string}', message => {
   cy.findByText(message).should('exist')
 })
 
-Then('the error message {string} is gone', () => {
+Then('the error message {string} is gone', message => {
   cy.findByText(message).should('not.exist')
 })
