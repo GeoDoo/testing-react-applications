@@ -23,6 +23,8 @@ const Login = () => {
   }
 
   const onChange = event => {
+    setValidationErrorMessage('')
+
     if (event.target.name === 'username') {
       setUsername(event.target.value)
     }

@@ -53,3 +53,7 @@ Then('I successfully login', () => {
 Then('I see the message {string}', message => {
   cy.findByText(message).should('exist')
 })
+
+Then('the error message {string} is gone', () => {
+  cy.findByText(message).should('not.exist')
+})

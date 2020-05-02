@@ -25,3 +25,9 @@ Then('I see only the logout link in the header', () => {
 Then('I should go to {string}', url => {
   cy.location('pathname').should('eq', url)
 })
+
+Then('I am logged out', () => {
+  if (window.localStorage.getItem('auth')) {
+    throw new Error('user not logged out!')
+  }
+})
