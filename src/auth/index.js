@@ -1,11 +1,9 @@
-import { user } from './../__test-data__/db.json'
+import testAuth from './test-auth.js'
 
 const getToken = async (username, password) => {
-  if (username === user.email && password === user.password) {
-    return btoa(JSON.stringify({ email: user.email }))
+  if (process.env.NODE_ENV === 'development') {
+    return await testAuth.getTestToken(username, password)
   }
-
-  return ''
 }
 
 export default {
