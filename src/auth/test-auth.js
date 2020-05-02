@@ -1,4 +1,4 @@
-import { user } from './../__test-data__/db.json'
+import { user } from '../../cypress/fixtures/db.json'
 
 const getTestToken = async (username, password) => {
   if (username === user.email && password === user.password) {
