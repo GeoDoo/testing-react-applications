@@ -18,26 +18,22 @@ Feature: Login page
   Scenario: I cannot login without the correct credentials
     When I submit the form
     Then I see the message "Email cannot be blank!"
-    And I type in my username
+    And I type an invalid email
     And the error message "Email cannot be blank!" is gone
     And I submit the form
     And I am logged out
-    And I see the message "Password cannot be blank!"
-
-    And I type an invalid email
-    And I submit the form
     And I see the message "Email should be a valid email!"
     And I type in my username
     And the error message "Email should be a valid email!" is gone
     And I submit the form
     And I am logged out
     And I see the message "Password cannot be blank!"
-
     And I type the wrong username
+    And the error message "Password cannot be blank!" is gone
     And I submit the form
-    And I see the message "User credentials are wrong!"
     And I am logged out
-    And I type the wrong password
-    And I submit the form
     And I see the message "User credentials are wrong!"
+    And I type the wrong password
+    And the error message "User credentials are wrong!" is gone
+    And I submit the form
     And I am logged out
