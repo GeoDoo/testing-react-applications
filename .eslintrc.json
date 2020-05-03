@@ -21,6 +21,8 @@
     "object-curly-spacing": "off",
     "new-cap": "off",
     "arrow-parens": "off",
-    "indent": "off"
+    "indent": "off",
+    "max-len": ["error", { "code": 100 }],
+    "no-console": "error"
   }
 }
