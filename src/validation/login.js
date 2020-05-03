@@ -4,7 +4,6 @@ export const validateUserCredentials = (email, password) => {
   }
 
   const isEmailValid =
-    (email.match(/\@/g) || []).length === 1 &&
     email.split('@')[1] &&
     email.split('@')[1].split('.').length > 1 &&
     (email.match(/\../g) || []).length > 0
